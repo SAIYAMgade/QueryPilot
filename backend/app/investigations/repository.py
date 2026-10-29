@@ -1,7 +1,7 @@
 """Persistent Repository for Query Investigations and Timeline Audits."""
 
 import uuid
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Any
 from datetime import datetime, timezone
 
 from app.schemas.investigation import (
