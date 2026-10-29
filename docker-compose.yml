@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  oracle-db:
+    image: container-registry.oracle.com/database/free:latest
+    container_name: querypilot-oracle
+    ports:
+      - "1521:1521"
+    environment:
+      - ORACLE_PWD=oracle_password
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+      - ./database/schema/01_init_retail_schema.sql:/docker-entrypoint-initdb.d/01_init.sql
+      - ./database/seed/seed_data.sql:/docker-entrypoint-initdb.d/02_seed.sql
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "/opt/oracle/checkDBStatus.sh"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: querypilot-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - ORACLE_HOST=oracle-db
+      - ORACLE_PORT=1521
+      - ORACLE_SERVICE_NAME=FREEPDB1
+      - ORACLE_USER=qp_app_user
+      - ORACLE_PASSWORD=qp_app_password
+      - ALLOW_OFFLINE_SIMULATION=true
+    depends_on:
+      - oracle-db
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: querypilot-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  oracle-data:

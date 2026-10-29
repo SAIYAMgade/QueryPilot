@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="100%" height="100%" style="background:#090d16; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="gradSky" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="gradRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#c2410c" />
+    </linearGradient>
+    <linearGradient id="gradEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Title & Subtitle -->
+  <text x="500" y="45" text-anchor="middle" fill="#38bdf8" font-size="22" font-weight="bold" letter-spacing="1">QUERYPILOT SYSTEM ARCHITECTURE</text>
+  <text x="500" y="72" text-anchor="middle" fill="#94a3b8" font-size="12">Evidence-Based Oracle SQL Intelligence &amp; Performance Investigation Platform</text>
+
+  <!-- Layer 1: Frontend UI -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="100" width="900" height="95" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+    <rect x="50" y="100" width="900" height="28" rx="10" fill="#1e293b"/>
+    <rect x="50" y="118" width="900" height="10" fill="#1e293b"/>
+    <circle cx="70" cy="114" r="4.5" fill="#f43f5e"/>
+    <circle cx="85" cy="114" r="4.5" fill="#f59e0b"/>
+    <circle cx="100" cy="114" r="4.5" fill="#10b981"/>
+    <text x="125" y="118" fill="#e2e8f0" font-size="11" font-weight="bold">FRONTEND CLIENT (React 19 + TypeScript + Tailwind CSS)</text>
+
+    <!-- Sub-blocks in Frontend -->
+    <rect x="70" y="138" width="150" height="42" rx="6" fill="#090d16" stroke="#0284c7" stroke-width="1"/>
+    <text x="145" y="156" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="bold">SQL Workspace</text>
+    <text x="145" y="171" text-anchor="middle" fill="#64748b" font-size="9">Monaco &amp; DataGrid</text>
+
+    <rect x="235" y="138" width="150" height="42" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+    <text x="310" y="156" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="bold">Schema Explorer</text>
+    <text x="310" y="171" text-anchor="middle" fill="#64748b" font-size="9">Catalog &amp; ER Visualizer</text>
+
+    <rect x="400" y="138" width="150" height="42" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+    <text x="475" y="156" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="bold">Plan Analyzer</text>
+    <text x="475" y="171" text-anchor="middle" fill="#64748b" font-size="9">Hierarchical Tree &amp; Leads</text>
+
+    <rect x="565" y="138" width="150" height="42" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+    <text x="640" y="156" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="bold">Comparison Lab</text>
+    <text x="640" y="171" text-anchor="middle" fill="#64748b" font-size="9">Multiset Equivalence</text>
+
+    <rect x="730" y="138" width="200" height="42" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+    <text x="830" y="156" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="bold">Investigations &amp; Reports</text>
+    <text x="830" y="171" text-anchor="middle" fill="#64748b" font-size="9">Audit Timeline &amp; HTML Export</text>
+  </g>
+
+  <!-- Arrow Down -->
+  <line x1="500" y1="195" x2="500" y2="230" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="500,235 495,225 505,225" fill="#38bdf8"/>
+  <text x="515" y="218" fill="#38bdf8" font-size="10" font-family="monospace">REST API (JSON / HTTP)</text>
+
+  <!-- Layer 2: Backend Core (FastAPI) -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="240" width="900" height="155" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+    <rect x="50" y="240" width="900" height="28" rx="10" fill="#1e293b"/>
+    <rect x="50" y="258" width="900" height="10" fill="#1e293b"/>
+    <text x="70" y="258" fill="#e2e8f0" font-size="11" font-weight="bold">BACKEND CORE ENGINE (FastAPI + Pydantic v2)</text>
+
+    <!-- Sub-components -->
+    <rect x="70" y="280" width="200" height="98" rx="6" fill="#090d16" stroke="#f43f5e" stroke-width="1"/>
+    <text x="170" y="300" text-anchor="middle" fill="#f43f5e" font-size="11" font-weight="bold">Security &amp; AST Parser</text>
+    <text x="85" y="322" fill="#94a3b8" font-size="9.5">• Read-Only SELECT validation</text>
+    <text x="85" y="338" fill="#94a3b8" font-size="9.5">• DML/DDL/TCL strict rejection</text>
+    <text x="85" y="354" fill="#94a3b8" font-size="9.5">• Comment smuggling detection</text>
+    <text x="85" y="370" fill="#94a3b8" font-size="9.5">• Max execution timeout (30s)</text>
+
+    <rect x="290" y="280" width="200" height="98" rx="6" fill="#090d16" stroke="#f59e0b" stroke-width="1"/>
+    <text x="390" y="300" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="bold">Diagnostic Rules Engine</text>
+    <text x="305" y="322" fill="#94a3b8" font-size="9.5">• Full table scan heuristics</text>
+    <text x="305" y="338" fill="#94a3b8" font-size="9.5">• Function-wrapped predicates</text>
+    <text x="305" y="354" fill="#94a3b8" font-size="9.5">• Hash join &amp; sort temp spills</text>
+    <text x="305" y="370" fill="#94a3b8" font-size="9.5">• Curated ORA- knowledge base</text>
+
+    <rect x="510" y="280" width="200" height="98" rx="6" fill="#090d16" stroke="#10b981" stroke-width="1"/>
+    <text x="610" y="300" text-anchor="middle" fill="#10b981" font-size="11" font-weight="bold">Benchmark &amp; Equivalence</text>
+    <text x="525" y="322" fill="#94a3b8" font-size="9.5">• Multiset frequency counting</text>
+    <text x="525" y="338" fill="#94a3b8" font-size="9.5">• Float precision &amp; NULL normalization</text>
+    <text x="525" y="354" fill="#94a3b8" font-size="9.5">• Median, min, max, IQR stats</text>
+    <text x="525" y="370" fill="#94a3b8" font-size="9.5">• Speedup factor calculation</text>
+
+    <rect x="730" y="280" width="200" height="98" rx="6" fill="#090d16" stroke="#0284c7" stroke-width="1"/>
+    <text x="830" y="300" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="bold">Driver Layer (oracledb)</text>
+    <text x="745" y="322" fill="#94a3b8" font-size="9.5">• Thin Mode (Pure Python)</text>
+    <text x="745" y="338" fill="#94a3b8" font-size="9.5">• Least-privilege QP_APP_USER</text>
+    <text x="745" y="354" fill="#94a3b8" font-size="9.5">• Clean exec vs fetch isolation</text>
+    <text x="745" y="370" fill="#94a3b8" font-size="9.5">• Fallback: In-Memory Sandbox</text>
+  </g>
+
+  <!-- Arrow Down -->
+  <line x1="500" y1="395" x2="500" y2="430" stroke="#ea580c" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="500,435 495,425 505,425" fill="#ea580c"/>
+  <text x="515" y="418" fill="#ea580c" font-size="10" font-family="monospace">Oracle Net Protocol (TCP:1521)</text>
+
+  <!-- Layer 3: Database -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="440" width="900" height="95" rx="10" fill="url(#cardGrad)" stroke="#ea580c" stroke-width="1.5"/>
+    <rect x="50" y="440" width="900" height="28" rx="10" fill="#1e293b"/>
+    <rect x="50" y="458" width="900" height="10" fill="#1e293b"/>
+    <text x="70" y="458" fill="#f97316" font-size="11" font-weight="bold">ORACLE DATABASE 23ai FREE / 21c / 19c XE</text>
+
+    <rect x="70" y="478" width="265" height="45" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+    <text x="202" y="497" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Data Dictionary Metadata</text>
+    <text x="202" y="512" text-anchor="middle" fill="#64748b" font-size="9">ALL_TABLES, ALL_TAB_COLUMNS, ALL_CONSTRAINTS</text>
+
+    <rect x="367" y="478" width="265" height="45" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+    <text x="499" y="497" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Explain Plan Engine</text>
+    <text x="499" y="512" text-anchor="middle" fill="#64748b" font-size="9">PLAN_TABLE &amp; DBMS_XPLAN.DISPLAY</text>
+
+    <rect x="664" y="478" width="265" height="45" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+    <text x="796" y="497" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="bold">Retail Schema &amp; PL/SQL</text>
+    <text x="796" y="512" text-anchor="middle" fill="#64748b" font-size="9">CUSTOMERS, ORDERS &amp; QUERY_PILOT_PKG</text>
+  </g>
+</svg>

@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="100%" height="100%" style="background:#090d16; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <filter id="shadowC" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="480" y="35" text-anchor="middle" fill="#38bdf8" font-size="18" font-weight="bold">QUERYPILOT RETAIL OPERATIONS RELATIONAL SCHEMA</text>
+  <text x="480" y="55" text-anchor="middle" fill="#94a3b8" font-size="11">Synthetic Relational Workload Model for Oracle Database Performance Engineering</text>
+
+  <!-- Entities -->
+
+  <!-- CATEGORIES -->
+  <g transform="translate(50, 80)" filter="url(#shadowC)">
+    <rect x="0" y="0" width="170" height="110" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    <rect x="0" y="0" width="170" height="24" rx="6" fill="#1e293b"/>
+    <text x="10" y="16" fill="#38bdf8" font-size="11" font-weight="bold">CATEGORIES</text>
+    <text x="10" y="42" fill="#fbbf24" font-size="10" font-family="monospace">PK CATEGORY_ID</text>
+    <text x="10" y="60" fill="#cbd5e1" font-size="10" font-family="monospace">   CATEGORY_NAME</text>
+    <text x="10" y="78" fill="#cbd5e1" font-size="10" font-family="monospace">UQ SLUG</text>
+    <text x="10" y="96" fill="#cbd5e1" font-size="10" font-family="monospace">   IS_ACTIVE</text>
+  </g>
+
+  <!-- PRODUCTS -->
+  <g transform="translate(280, 80)" filter="url(#shadowC)">
+    <rect x="0" y="0" width="180" height="145" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    <rect x="0" y="0" width="180" height="24" rx="6" fill="#1e293b"/>
+    <text x="10" y="16" fill="#38bdf8" font-size="11" font-weight="bold">PRODUCTS</text>
+    <text x="10" y="42" fill="#fbbf24" font-size="10" font-family="monospace">PK PRODUCT_ID</text>
+    <text x="10" y="60" fill="#38bdf8" font-size="10" font-family="monospace">FK CATEGORY_ID</text>
+    <text x="10" y="78" fill="#cbd5e1" font-size="10" font-family="monospace">UQ SKU</text>
+    <text x="10" y="96" fill="#cbd5e1" font-size="10" font-family="monospace">   PRODUCT_NAME</text>
+    <text x="10" y="114" fill="#cbd5e1" font-size="10" font-family="monospace">   UNIT_PRICE</text>
+    <text x="10" y="132" fill="#cbd5e1" font-size="10" font-family="monospace">   STOCK_QUANTITY</text>
+  </g>
+
+  <!-- ORDER_ITEMS -->
+  <g transform="translate(520, 80)" filter="url(#shadowC)">
+    <rect x="0" y="0" width="180" height="145" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    <rect x="0" y="0" width="180" height="24" rx="6" fill="#1e293b"/>
+    <text x="10" y="16" fill="#38bdf8" font-size="11" font-weight="bold">ORDER_ITEMS</text>
+    <text x="10" y="42" fill="#fbbf24" font-size="10" font-family="monospace">PK ITEM_ID</text>
+    <text x="10" y="60" fill="#38bdf8" font-size="10" font-family="monospace">FK ORDER_ID</text>
+    <text x="10" y="78" fill="#38bdf8" font-size="10" font-family="monospace">FK PRODUCT_ID</text>
+    <text x="10" y="96" fill="#cbd5e1" font-size="10" font-family="monospace">   QUANTITY</text>
+    <text x="10" y="114" fill="#cbd5e1" font-size="10" font-family="monospace">   UNIT_PRICE</text>
+    <text x="10" y="132" fill="#cbd5e1" font-size="10" font-family="monospace">   LINE_TOTAL</text>
+  </g>
+
+  <!-- CUSTOMERS -->
+  <g transform="translate(50, 270)" filter="url(#shadowC)">
+    <rect x="0" y="0" width="170" height="135" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    <rect x="0" y="0" width="170" height="24" rx="6" fill="#1e293b"/>
+    <text x="10" y="16" fill="#38bdf8" font-size="11" font-weight="bold">CUSTOMERS</text>
+    <text x="10" y="42" fill="#fbbf24" font-size="10" font-family="monospace">PK CUSTOMER_ID</text>
+    <text x="10" y="60" fill="#cbd5e1" font-size="10" font-family="monospace">   FIRST_NAME</text>
+    <text x="10" y="78" fill="#cbd5e1" font-size="10" font-family="monospace">   LAST_NAME</text>
+    <text x="10" y="96" fill="#cbd5e1" font-size="10" font-family="monospace">UQ EMAIL</text>
+    <text x="10" y="114" fill="#cbd5e1" font-size="10" font-family="monospace">   LOYALTY_TIER</text>
+  </g>
+
+  <!-- ORDERS -->
+  <g transform="translate(280, 270)" filter="url(#shadowC)">
+    <rect x="0" y="0" width="180" height="150" rx="6" fill="#0f172a" stroke="#0284c7" stroke-width="2"/>
+    <rect x="0" y="0" width="180" height="24" rx="6" fill="#0369a1"/>
+    <text x="10" y="16" fill="#f8fafc" font-size="11" font-weight="bold">ORDERS (Central)</text>
+    <text x="10" y="42" fill="#fbbf24" font-size="10" font-family="monospace">PK ORDER_ID</text>
+    <text x="10" y="60" fill="#38bdf8" font-size="10" font-family="monospace">FK CUSTOMER_ID</text>
+    <text x="10" y="78" fill="#34d399" font-size="10" font-family="monospace">IX ORDER_DATE</text>
+    <text x="10" y="96" fill="#cbd5e1" font-size="10" font-family="monospace">   TOTAL_AMOUNT</text>
+    <text x="10" y="114" fill="#34d399" font-size="10" font-family="monospace">IX STATUS</text>
+    <text x="10" y="132" fill="#cbd5e1" font-size="10" font-family="monospace">   PAYMENT_STATUS</text>
+  </g>
+
+  <!-- PAYMENTS -->
+  <g transform="translate(520, 270)" filter="url(#shadowC)">
+    <rect x="0" y="0" width="180" height="120" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    <rect x="0" y="0" width="180" height="24" rx="6" fill="#1e293b"/>
+    <text x="10" y="16" fill="#38bdf8" font-size="11" font-weight="bold">PAYMENTS</text>
+    <text x="10" y="42" fill="#fbbf24" font-size="10" font-family="monospace">PK PAYMENT_ID</text>
+    <text x="10" y="60" fill="#38bdf8" font-size="10" font-family="monospace">FK ORDER_ID</text>
+    <text x="10" y="78" fill="#cbd5e1" font-size="10" font-family="monospace">   PAYMENT_METHOD</text>
+    <text x="10" y="96" fill="#cbd5e1" font-size="10" font-family="monospace">   AMOUNT</text>
+  </g>
+
+  <!-- SHIPMENTS -->
+  <g transform="translate(740, 270)" filter="url(#shadowC)">
+    <rect x="0" y="0" width="170" height="120" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    <rect x="0" y="0" width="170" height="24" rx="6" fill="#1e293b"/>
+    <text x="10" y="16" fill="#38bdf8" font-size="11" font-weight="bold">SHIPMENTS</text>
+    <text x="10" y="42" fill="#fbbf24" font-size="10" font-family="monospace">PK SHIPMENT_ID</text>
+    <text x="10" y="60" fill="#38bdf8" font-size="10" font-family="monospace">FK ORDER_ID</text>
+    <text x="10" y="78" fill="#cbd5e1" font-size="10" font-family="monospace">UQ TRACKING_NUMBER</text>
+    <text x="10" y="96" fill="#cbd5e1" font-size="10" font-family="monospace">   CARRIER</text>
+  </g>
+
+  <!-- Connectors -->
+  <!-- CATEGORIES -> PRODUCTS -->
+  <line x1="220" y1="135" x2="280" y2="135" stroke="#38bdf8" stroke-width="1.5"/>
+  <circle cx="225" cy="135" r="3" fill="#38bdf8"/>
+  <polygon points="280,135 272,130 272,140" fill="#38bdf8"/>
+
+  <!-- PRODUCTS -> ORDER_ITEMS -->
+  <line x1="460" y1="135" x2="520" y2="135" stroke="#38bdf8" stroke-width="1.5"/>
+  <circle cx="465" cy="135" r="3" fill="#38bdf8"/>
+  <polygon points="520,135 512,130 512,140" fill="#38bdf8"/>
+
+  <!-- CUSTOMERS -> ORDERS -->
+  <line x1="220" y1="330" x2="280" y2="330" stroke="#38bdf8" stroke-width="1.5"/>
+  <circle cx="225" cy="330" r="3" fill="#38bdf8"/>
+  <polygon points="280,330 272,325 272,335" fill="#38bdf8"/>
+
+  <!-- ORDERS -> ORDER_ITEMS -->
+  <path d="M 400 270 L 400 240 L 610 240 L 610 225" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
+  <circle cx="400" cy="265" r="3" fill="#38bdf8"/>
+  <polygon points="610,225 605,233 615,233" fill="#38bdf8"/>
+
+  <!-- ORDERS -> PAYMENTS -->
+  <line x1="460" y1="330" x2="520" y2="330" stroke="#38bdf8" stroke-width="1.5"/>
+  <circle cx="465" cy="330" r="3" fill="#38bdf8"/>
+  <polygon points="520,330 512,325 512,335" fill="#38bdf8"/>
+
+  <!-- ORDERS -> SHIPMENTS -->
+  <path d="M 460 360 L 740 360" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
+  <circle cx="465" cy="360" r="3" fill="#38bdf8"/>
+  <polygon points="740,360 732,355 732,365" fill="#38bdf8"/>
+</svg>
